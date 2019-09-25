@@ -39,12 +39,12 @@ lists {
 * `files` - A list of **FILES** containing a list of zones to be included on the list. The default is empty. Each zone should end with a period and there should be one zone per line.
 * `dryrun` - Execute the plugin without any blocking behavior. Use with the `debug` plugin to see expected behavior. Useful for diagnosing list issues.
 
-Any match in a list for a zone will apply that list's logic. When a zone matches in both the whitelist and blacklist, the blacklist takes precedence. A match is the most specific zone for the query (longest suffix match). E.g. if there are two zones in a list, one for example.org and one for a.example.org, and the query is for www.a.example.org, it will be matched to the latter.
+Any match in a list for a zone will apply that list's logic. When a zone matches in both the whitelist and blacklist, the blacklist takes precedence. A match is the most specific zone for the query (longest suffix match). E.g. if there are two zones in a list, one for `example.org` and one for `a.example.org`, and the query is for `www.a.example.org`, it will be matched to the latter.
 
-* If example.org is on the whitelist but a.example.org is in the blacklist, and the query is for www.a.example.org, the query will be denied. (a.example.org matches the blacklist)
-* If example.org is on the blacklist but a.example.org is in the whitelist, and the query is for www.a.example.org, the query will be denied. (example.org matches the blacklist)
-* If example.org and/or a.example.org is in the whitelist, and the query is for www.a.example.org, the query will be permitted.
-* If api.example.org is on the blacklist, and `.` is in the whitelist, the query is for www.a.example.org, the query will be permitted. (api.example.org does not match a.example.org)
+* If `example.org` is on the whitelist but `a.example.org` is in the blacklist, and the query is for `www.a.example.org`, the query will be denied. (`a.example.org` matches the blacklist)
+* If `example.org` is on the blacklist but `a.example.org` is in the whitelist, and the query is for `www.a.example.org`, the query will be denied. (`example.org` matches the blacklist)
+* If `example.org` and/or `a.example.org` is in the whitelist, and the query is for `www.a.example.org`, the query will be permitted.
+* If `api.example.org` is on the blacklist, and `.` is in the whitelist, the query is for `www.a.example.org`, the query will be permitted. (`api.example.org` does not match `a.example.org`)
 
 ## Examples
 ~~~
