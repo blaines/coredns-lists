@@ -43,20 +43,12 @@ Any match in a list for a zone will apply that list's logic. When a zone matches
 . {
     lists {
         whitelist {
-            zones {
-                example.com
-            }
-            files {
-                ./whitelist-zones
-            }
+            zones example.com
+            files ./whitelist-zones
         }
         blacklist {
-            zones {
-                example.com
-            }
-            files {
-                /etc/coredns/blacklist-zones
-            }
+            zones example.com
+            files /etc/coredns/blacklist-zones
         }
     }
     forward . 1.1.1.1
