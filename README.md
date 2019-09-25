@@ -13,20 +13,12 @@ The *lists* plugin is used to filter DNS requests based on lists of zones. It ca
 ~~~
 lists {
     whitelist {
-        zones {
-            [ZONES...]
-        }
-        files {
-            [FILES...]
-        }
+        zones [ZONES...]
+        files [FILES...]
     }
     blacklist {
-        zones {
-            [ZONES...]
-        }
-        files {
-            [FILES...]
-        }
+        zones [ZONES...]
+        files [FILES...]
     }
     dryrun
 }
